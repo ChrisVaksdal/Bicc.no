@@ -1,0 +1,333 @@
+/* Styling for Bubo 'Control Panel' (logged_in.php) */
+
+:root{
+	--bubo-blue-color: #2CB1EC;
+}
+
+body{
+    height: 100%;
+    overflow: hidden;
+	background: #D3D3D3;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}	
+
+div.grid_content_box{
+	background-color: white;
+}
+
+h3{
+	margin-left: 2rem;
+}
+
+p.facts_text{
+    margin-top: 15px;
+    margin-left: 15px;
+    font-size: 2rem;
+}
+
+
+
+/* CSS-grid parent */
+.parent {
+background: #D3D3D3;
+display: grid;
+grid-template-columns: 2fr repeat(3, 1fr);
+grid-template-rows: repeat(4, 1fr);
+grid-column-gap: 10px;
+grid-row-gap: 10px;
+height: 98vh;
+}
+
+/* CSS-grid areas */
+.kart { grid-area: 1 / 1 / 4 / 2; background-color: white;}
+.facts { grid-area: 4 / 1 / 5 / 2; background-color: white;}
+.graf { grid-area: 1 / 2 / 3 / 4; background-color: white;}
+.grafvalg { grid-area: 1 / 4 / 3 / 5; background-color: white;}
+.tabell { grid-area: 3 / 4 / 5 / 5; background-color: white;}
+.datoer { grid-area: 3 / 2 / 4 / 3; background-color: white;}
+.turbin_liste { grid-area: 3 / 3 / 4 / 4; background-color: white;}
+.pynt { grid-area: 4 / 2 / 5 / 4; background-color: #D3D3D3;}
+
+.grid_content_box{
+	-webkit-box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.75);
+	box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.75);
+}
+
+/*------------------------------------------------------*/
+
+
+/* Google-maps map */
+#map {
+	height: 100%;
+}
+
+/* Table: */
+.table_container{
+	height:90%;
+	overflow: auto;
+}
+
+.table_container table{
+	background: white;
+	border-collapse: collapse;
+	width: 100%;
+    height: 100%;
+	margin: auto;
+}
+
+.table_container td, th{
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+.table_container tr:nth-child(even){
+	background: #f2f2f2;
+}
+
+.table_container tr:hover{
+	background: #ddd;
+}
+
+.table_container th{
+    position: sticky;
+    top: 0;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #2CB1EC;
+	color: white;
+}
+
+/*------------------------------------------------------*/
+
+
+/* Dates */
+.datoboks{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 100%;
+    height: 50%;
+}
+
+.datoboks input{
+    width: 95%;
+}
+
+.date_choose{
+    height: 50%;
+}
+
+.date_title{
+    text-align: center;
+    width: 100%;
+    font-size: 2em;
+}
+
+/*------------------------------------------------------*/
+
+
+/* Turbine List */
+
+hr{
+}
+
+.list_container{
+	overflow: auto;
+	margin: auto;
+	width: 95%;
+	max-height: 15rem;
+	margin-bottom: 1rem;
+}
+
+.checkbox_container input{
+	position: absolute;
+  	opacity: 0;
+  	cursor: pointer;
+	height: 0;
+  	width: 0;
+    font-size: 1.2rem;
+}
+
+.checkbox_container{
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 12px;
+  	cursor: pointer;
+  	font-size: 1.2rem;
+  	-webkit-user-select: none;
+  	-moz-user-select: none;
+  	-ms-user-select: none;
+  	user-select: none;
+}
+
+
+.turbine_hits{
+	color: red;
+	text-align: right;
+}
+
+
+/* Set color for hover when not checked */
+.checkbox_container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* Set color for when checked */
+.checkbox_container input:checked ~ .checkmark {
+  background-color: var(--bubo-blue-color);
+}
+
+.checkmark {
+  	position: absolute;
+  	top: 0;
+  	left: 0;
+  	height: 25px;
+  	width: 25px;
+  	background-color: #eee;
+} 
+
+/* 'Checked' indicator */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Prettify the checkmark/indicator */
+.checkbox_container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.checkbox_container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/*------------------------------------------------------*/
+
+
+/* Logo */
+
+.pynt img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    padding-bottom: 10px;
+}
+
+/*------------------------------------------------------*/
+
+/* Utils */
+
+.hidden{
+    display: none;
+}
+
+
+
+
+/*------------------------------------------------------*/
+
+/* Graph Options */
+ /* Dropdown Button */
+.dropbtn {
+    background-color: var(--bubo-blue-color);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    width: 100%;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    width: 100%;
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3a8cc2;}
+
+/* Symbols */
+i {
+    border: solid LightGray;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.blue-background{
+    background: var(--bubo-blue-color);
+}
+
+.black-font{
+    color: black;
+}
+
+.bold-font{
+    font-weight: bold;
+}
+
+.large-font {
+    font-size: 15px;
+}
+
+ .grey-background{
+    background: #f2f2f2;
+ }
+
+ .white-background{
+    background: white;
+ }
+
+ input[type=checkbox]{
+     width: 100%;
+ }
