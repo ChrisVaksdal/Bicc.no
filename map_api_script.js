@@ -1,18 +1,11 @@
       google.charts.load('current', {
         'packages': ['table', 'map', 'corechart'],
-        // Note: you will need to get a mapsApiKey for your project.
-        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
-        'mapsApiKey': 'AIzaSyAHN59_Mygwxtd8HHZQ_703GOl0bqLvyWQ'
+        'mapsApiKey': 'DIN-GOOGLE-API-KEY'
       });
       google.charts.setOnLoadCallback(initialize);
 
       
-      function initialize() {
-        // The URL of the spreadsheet to source data from.
-        var query = new google.visualization.Query(
-            'https://spreadsheets.google.com/pub?key=pCQbetd-CptF0r8qmCOlZGg');
-        query.send(draw);
-      }
+      function initialize() {}
 
       function draw(response) {
         if (response.isError()) {
@@ -57,15 +50,11 @@
 
 
 
-        // Set a 'select' event listener for the table.
-        // When the table is selected, we set the selection on the map.
+        // Sett listeners for å binde sammen tabell og kart:
         google.visualization.events.addListener(table, 'select',
             function() {
                 map.setSelection(table.getSelection());
             });
-
-        // Set a 'select' event listener for the map.
-        // When the map is selected, we set the selection on the table.
         google.visualization.events.addListener(map, 'select',
             function() {
                 table.setSelection(map.getSelection());
